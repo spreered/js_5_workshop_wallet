@@ -2,6 +2,8 @@
 
 請學員依序完成以下任務清單來達成目標
 
+![](https://github.com/spreered/js_5_workshop_wallet/blob/master/5xWallet.gif?raw=true)
+
 ## 專案準備以及提交方式
 
 1. 請 fork 本 repo 至自己的 GitHub 帳號下
