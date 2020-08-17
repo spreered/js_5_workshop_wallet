@@ -5,3 +5,21 @@ function initData(){
   localStorage.setItem('records',JSON.stringify(sampleData) )
 }
 
+function getValue() {
+  const data = {};
+  const category = document.getElementsByName('category');
+  const date = document.getElementsByName('date');
+  const amount = document.getElementsByName('amount');
+  const description = document.getElementsByName('description');
+  data.category = category[1].value;
+  data.date = date[0].value;
+  data.amount = amount[0].value;
+  data.description = description[0].value;
+}
+
+const form = document.getElementById('item-form');
+
+form.addEventListener('submit', () => {
+  event.preventDefault();
+  getValue();
+})
