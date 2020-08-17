@@ -43,6 +43,7 @@ https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoe
 - [ ] 「記個帳吧」表單送出後，取得表單內容
 - [ ] 將表單內容轉置為 json 格式
 - [ ] 按下 submit 後，不會真的送出表單，而是使用 `console.log` 印出新增的內容
+- [ ] submit 後，請清空表單的內容。
 
 ```json
 { 
