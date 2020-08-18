@@ -22,7 +22,6 @@ function getValue() {
   data.date = date[0].value;
   data.amount = amount[0].value;
   data.description = description[0].value;
-  console.log(data);
   saveValue(data);
 }
 
