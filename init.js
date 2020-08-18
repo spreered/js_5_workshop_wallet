@@ -5,6 +5,13 @@ function initData(){
   localStorage.setItem('records',JSON.stringify(sampleData) )
 }
 
+const form = document.getElementById('item-form');
+
+form.addEventListener('submit', () => {
+  event.preventDefault();
+  getValue();
+})
+
 function getValue() {
   const data = {};
   const category = document.getElementsByName('category');
@@ -15,11 +22,13 @@ function getValue() {
   data.date = date[0].value;
   data.amount = amount[0].value;
   data.description = description[0].value;
+  console.log(data);
+  saveValue(data);
 }
 
-const form = document.getElementById('item-form');
-
-form.addEventListener('submit', () => {
-  event.preventDefault();
-  getValue();
-})
+function saveValue(value) {
+  const records = JSON.parse(localStorage.getItem('records')) || [];
+  records.push(value);
+  localStorage.setItem('records', JSON.stringify(records));
+  console.log(JSON.parse(localStorage.getItem('records')));
+}
