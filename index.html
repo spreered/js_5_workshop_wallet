@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <style>
-tr .remove{
-  visibility: hidden;
-}
-tr:hover .remove {
-  visibility: visible;
-}
+    tr .remove{
+      visibility: hidden;
+    }
+    tr:hover .remove {
+      visibility: visible;
+    }
   </style>
 </head>
 <body>
@@ -126,8 +126,19 @@ tr:hover .remove {
 
   </div>
   <script src="index.js"></script>
-  <script src="search.js"></script>
+  <!-- <script src="search.js"></script> -->
   <script src="init.js"></script>
 </body>
 
 </html>
+
+<template id="record-template">
+  <tr class="item">
+    <th class="date" scope="row">2020&#45;08&#45;09</th>
+    <td class="category">食</td>
+    <td class="description">漢堡王</td>
+    <td class="amount">150</td>
+    <td><span class="remove">x</span></td>
+  </tr>
+</template>
+
