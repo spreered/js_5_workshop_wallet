@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded',function(){
+
   let form = window.document.forms['item-form']
   const panel = document.querySelector('#records-panel')
   const temp = document.querySelector('#temp')
@@ -103,4 +103,4 @@ form.addEventListener('submit',function(e){
     return uuid;
   };
 
-})
+
