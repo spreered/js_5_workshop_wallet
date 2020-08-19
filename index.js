@@ -75,6 +75,7 @@ window.addEventListener("DOMContentLoaded", () => {
     records_panel.appendChild(clone);
   }
 
+  ///排序function
   function compare(a, b) {
     const date_a = a.date
     const date_b = b.date
