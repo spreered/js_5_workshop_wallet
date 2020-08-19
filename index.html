@@ -125,6 +125,20 @@ tr:hover .remove {
     </div>
 
   </div>
+
+
+  <template id="temp">
+    <tr class="item">
+      <th scope="row">${revenue.date}</th>
+      <td id="category">${revenue.category}</td>
+      <td id="description">${revenue.description}</td>
+      <td id="amount">${revenue.amount}</td>
+      <td id="remove"><span class="remove">x</span></td>
+    </tr>
+  </template>
+
+
+  
   <script src="index.js"></script>
   <script src="search.js"></script>
   <script src="init.js"></script>
