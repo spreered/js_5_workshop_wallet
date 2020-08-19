@@ -1,5 +1,18 @@
 window.addEventListener('DOMContentLoaded',function(){
   let form = window.document.forms['item-form']
+
+  const panel = document.querySelector('#records-panel')
+  let now = localStorage.getItem('records')
+  let unsortArray = JSON.parse(now)
+  let nowArray = unsortArray.sort((a,b)=>{
+     a = a.date.split('-')  
+    b = b.date.split('-')
+    a = Number(a[0]+a[1]+a[2])
+    b = Number(b[0]+b[1]+b[2])
+    return b - a
+  })
+
+  const temp = document.querySelector('#temp')
   
 form.addEventListener('submit',function(e){
   e.preventDefault();
@@ -19,21 +32,31 @@ form.addEventListener('submit',function(e){
   // console.log(listObj)
   // localStorage.removeItem('records')
   if (!getItem){
-    localStorage.setItem('records',JSON.stringify(arrayObj))
+    localStorage.setItem('redcords',JSON.stringify(arrayObj))
   }else{
     let exists = localStorage.getItem('records')
     let existsArray = JSON.parse(exists)
-    console.log(existsArray)
-    console.log(listObj)
     existsArray.push(listObj)
-    console.log(existsArray)
     localStorage.setItem('records',JSON.stringify(existsArray))
   }
+
+    temp.content.querySelector('th').textContent = listObj.date
+    temp.content.querySelector('.category').textContent = listObj.category
+    temp.content.querySelector('.description').textContent = listObj.description
+    temp.content.querySelector('.amount').textContent =listObj.amount
+    let clone = document.importNode(temp.content,true)
+    panel.appendChild(clone)
   
-  // else{
-  //   newArray =  JSON.parse(getItem).push(listObj)
-  //   localStorage.setItem('records',JSON.stringify(newArray))
-  // }
 
 })
+  nowArray.forEach(obj => {
+    temp.content.querySelector('th').textContent = obj.date
+    temp.content.querySelector('.category').textContent =obj.category
+    temp.content.querySelector('.description').textContent =obj.description
+    temp.content.querySelector('.amount').textContent =obj.amount
+    let clone = document.importNode(temp.content,true)
+    panel.appendChild(clone)
+  });
+  
+
 })
