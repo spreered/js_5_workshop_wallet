@@ -1,10 +1,11 @@
 window.addEventListener("DOMContentLoaded", function() {
+  const search = document.forms[0];
   const inputForm = document.forms[1];
   const records = document.querySelector("#records-panel");
   const template = document.querySelector("#temp");
   let local = JSON.parse(localStorage.getItem("records")) || [];
 
-  renderItems(local);
+  renderItems(local.sort((a, b) => a.date > b.date ? 1 : -1));
 
   inputForm.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -41,6 +42,32 @@ window.addEventListener("DOMContentLoaded", function() {
     ));
 
     e.target.parentNode.parentNode.remove();
+  });
+
+
+
+  search.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    if ((search.category.value) && (search.month.value)) {
+      records.innerHTML = "";
+      renderItems(local.filter(function(item) {
+        return (item.category === search.category.value && item.date.match(new RegExp(`^${search.month.value}`)));
+      }));
+    } else if (search.category.value) {
+      records.innerHTML = "";
+      renderItems(local.filter(function(item) {
+        return item.category === search.category.value;
+      }));
+    } else if (search.month.value) {
+      // console.log(`${search.month.value}`);
+      records.innerHTML = "";
+      renderItems(local.filter(function(item) {
+        return item.date.match(new RegExp(`^${search.month.value}`));
+      }));
+    }
+
+    search.reset();
   });
 
 
