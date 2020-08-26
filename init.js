@@ -3,5 +3,6 @@ function initData(){
 
 
   localStorage.setItem('records',JSON.stringify(sampleData) )
+  
 }
 
